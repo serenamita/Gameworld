@@ -1,0 +1,125 @@
+<section id="universos">
+    <h2>Universos Alternos 🌎</h2>
+    <div class="universos-container">
+        <div class="universo">
+            <img src="balazo.jpg" alt="canonico">
+            <p>Universo Canon</p>
+
+        </div>
+        <div class="universo">
+            <img src="omegaverse.jpg" alt="Omegaverse">
+            <p>Universo omegaverse</p>
+        </div>
+    </div>
+</div>
+<li><a href="menu.html" class="return">⬅ Volver al menú</a>
+</section>
+
+<style>
+ body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffe6f2;
+            color: #ff1493;
+            text-align: center;
+        }
+        h2 {
+        text-align: center;
+        color: #ff69b4;
+    }
+
+        header {
+            background-color: #ff69b4;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #ff1493;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #ff69b4;
+        }
+        .galeria, .universos-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .universo {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #ff69b4;
+            cursor: pointer;
+            position: relative;
+        }
+        .universo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+        }
+        .info {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ff69b4;
+            width: 150px;
+        }
+        .btn.hover .info {
+            display: block;
+        }
+        .personaje:hover .info {
+            display: block;
+        }  
+
+.return-menu {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #ff00aa;
+    font-weight: bold;
+}
+
+.return-menu:hover {
+    text-decoration: underline;
+}
+        .return {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #ff1493;
+        }
+        .return-menu:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<script>
+    function toggleInfo(element) {
+        let info = element.querySelector(".info");
+        info.style.display = info.style.display === "block" ? "none" : "block";
+    }
+</script>

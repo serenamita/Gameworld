@@ -1,0 +1,133 @@
+<section id="personajes">
+    <h2>Personajes </h2>
+    <div class="galeria">
+        <div class="personaje" onclick="toggleInfo(this)">
+            <img src="Michelle.jpg" width="40%" alt="Antiheroe">
+            <p>"Michelle" 🔥<p>Alias: Mich</p>
+            <div class="info">
+                <p>Trabaja para la federacion</p>
+                <p>18 años de edad</p>
+                <p>clasificado</p>
+                <p>clasificado</p>
+                <p>clasificado</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="galeria">
+        <div class="personaje" onclick="toggleInfo(this)">
+            <img src="Dan.jpeg" width="40%" alt="Heroe">
+            <p>Dan</p>
+            <div class="info">
+                <p>21 años de edad</p>
+                <p>1'80 Estatura</p>
+                <p>Trabajador principal de la "Mente"</p>
+                <p>Mama del grupito</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="galeria">
+        <div class="personaje" onclick="toggleInfo(this)">
+            <img src="Mikaela.jpeg" width="40%" alt="Heroe">
+            <p>Mikaela🔥</p>
+            <div class="info">
+                <p>15 años de edad</p>
+                <p>1'65 Etatura</p>
+                <p>Trabajador de la "Mente"</p>
+                <p>Chiquillo malcriado</p>
+            </div>
+        </div>
+    </div>
+
+        <div class="galeria">
+            <div class="personaje" onclick="toggleInfo(this)">
+                <img src="Harry.jpeg" width="40%" alt="Antiheroe">
+                <p> Harry Ls 🔥</p>
+                <div class="info">
+                    <p>16 años de edad</p>
+                    <p>1'70 Estatura</p>
+                    <p>Guardaespaldas personal</p>
+                    <p>Chiquillo revelde</p>
+                </div>
+            </div>
+        </div>
+
+    </div><li><a href="menu.html" class="return">⬅ Volver al menú</a>
+</section>
+
+<style>
+   body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffe6f2;
+            color: #ff1493;
+            text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+        color: #ff69b4;
+    }
+
+    .galeria {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .personaje {
+        cursor: pointer;
+        background: white; /* Asegura que el fondo sea visible */
+        border: 2px solid #ccc;
+        padding: 15px;
+        text-align: center;
+        width: 250px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .personaje:hover {
+        background: #e0e0e0; /* Un color más oscuro al pasar el mouse */
+    }
+
+    .info {
+        display: none;
+        margin-top: 10px;
+        padding: 10px;
+        background: #f9f9f9; /* Color de fondo para el texto */
+        border-top: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .return-menu {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #ff00aa;
+        font-weight: bold;
+    }
+
+    .return-menu:hover {
+        text-decoration: underline;
+    }
+        .return {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #ff1493;
+        }
+        .return-menu:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<script>
+    function toggleInfo(element) {
+        let info = element.querySelector(".info");
+        info.style.display = info.style.display === "block" ? "none" : "block";
+    }
+</script>

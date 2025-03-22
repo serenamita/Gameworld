@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffe6f2;
+            color: #ff1493;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        /* Banner */
+        #banner {
+            width: 100%;
+            height: 150px;
+            background-color: #ff69b4;
+            border-radius: 10px 10px 0 0;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        /* Botones arriba del banner */
+        .btn-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .btn {
+            background-color: #ff1493;
+            color: white;
+            padding: 5px 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            width: auto;
+        }
+        .btn:hover {
+            background-color: #ff69b4;
+        }
+        .btn-close {
+            background-color: white;
+            color: #ff1493;
+            border: 1px solid #ff1493;
+        }
+        .btn-close:hover {
+            background-color: #ff1493;
+            color: white;
+        }
+        /* Imagen de perfil */
+        #fotoPerfil {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid white;
+            position: absolute;
+            top: 110px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-size: cover;
+            background-position: center;
+        }
+        #infoPerfil {
+            margin-top: 70px;
+        }
+        #descripcionPerfil {
+            margin: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+        .edit-section {
+            display: none;
+            margin-top: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ff1493;
+            border-radius: 5px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        .return-menu {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #ff00aa;
+    font-weight: bold;
+}
+
+.return-menu:hover {
+    text-decoration: underline;
+}
+        .return {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #ff1493;
+        }
+        .return-menu:hover {
+        text-decoration: underline;
+    }
+</style>
+
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <div id="banner">
+            <!-- Botones arriba del banner -->
+            <div class="btn-container">
+                <button class="btn" id="editarBtn" onclick="editarPerfil()">✏️ Configurar</button>
+                <button class="btn btn-close" onclick="cerrarSesion()">❌ cerrar sesion</button>
+            </div>
+        </div>
+
+        <div id="fotoPerfil"></div>
+        <div id="infoPerfil">
+            <h2 id="nombreUsuario">Mi Perfil</h2>
+            <p id="descripcionPerfil">Aquí va tu descripción.</p>
+        </div>
+
+        <div class="edit-section" id="editSection">
+            <input type="file" id="inputBanner" accept="image/*">
+            <input type="file" id="inputFotoPerfil" accept="image/*">
+            <textarea id="inputDescripcion" placeholder="Escribe algo sobre ti..."></textarea>
+            <button class="btn" onclick="guardarPerfil()">Guardar</button>
+        </div>
+    </div>
+
+    <script>
+        // Cargar datos guardados en localStorage
+        document.addEventListener("DOMContentLoaded", function () {
+            var usuario = localStorage.getItem("usuario") || "Mi Perfil";
+            var fotoPerfil = localStorage.getItem("fotoPerfil");
+            var banner = localStorage.getItem("banner");
+            var descripcion = localStorage.getItem("descripcionPerfil") || "Aquí va tu descripción.";
+
+            document.getElementById("nombreUsuario").innerText = usuario;
+            document.getElementById("descripcionPerfil").innerText = descripcion;
+
+            if (fotoPerfil) {
+                document.getElementById("fotoPerfil").style.backgroundImage = "url('" + fotoPerfil + "')";
+            }
+            if (banner) {
+                document.getElementById("banner").style.backgroundImage = "url('" + banner + "')";
+            }
+        });
+
+        // Mostrar la sección de edición
+        function editarPerfil() {
+            document.getElementById("editSection").style.display = "block";
+            document.getElementById("editarBtn").style.display = "none";
+        }
+
+        // Guardar los cambios en el perfil
+        function guardarPerfil() {
+            var descripcion = document.getElementById("inputDescripcion").value;
+            if (descripcion) {
+                localStorage.setItem("descripcionPerfil", descripcion);
+                document.getElementById("descripcionPerfil").innerText = descripcion;
+            }
+
+            var fileFoto = document.getElementById("inputFotoPerfil").files[0];
+            var fileBanner = document.getElementById("inputBanner").files[0];
+
+            if (fileFoto) {
+                var readerFoto = new FileReader();
+                readerFoto.onload = function (e) {
+                    localStorage.setItem("fotoPerfil", e.target.result);
+                    document.getElementById("fotoPerfil").style.backgroundImage = "url('" + e.target.result + "')";
+                };
+                readerFoto.readAsDataURL(fileFoto);
+            }
+
+            if (fileBanner) {
+                var readerBanner = new FileReader();
+                readerBanner.onload = function (e) {
+                    localStorage.setItem("banner", e.target.result);
+                    document.getElementById("banner").style.backgroundImage = "url('" + e.target.result + "')";
+                };
+                readerBanner.readAsDataURL(fileBanner);
+            }
+
+            // Ocultar la sección de edición y mostrar los datos
+            document.getElementById("editSection").style.display = "none";
+            document.getElementById("editarBtn").style.display = "block";
+
+            alert("Perfil guardado correctamente.");
+        }
+
+// Cerrar sesión y redirigir al inicio
+function cerrarSesion() {
+            localStorage.clear();
+            window.location.href = "index.html";
+
+            // Ocultar la sección de edición y mostrar los datos
+            document.getElementById("editSection").style.display = "none";
+            document.getElementById("editarBtn").style.display = "block";
+
+            alert("Perfil guardado correctamente.");
+        }
+            
+    </script>
+ </div><li><a href="menu.html" class="return">⬅ Volver al menú</a>
+ </section>
+</body>
+</html>

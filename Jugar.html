@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta para Dan</title>
+  <link rel="stylesheet" href="style.css">
+<body>
+  <main>
+    <div class="container-letter">
+      <div class="cover"></div>
+      <span class="heart">♥</span>
+      <p class="paper" id="mainMessage">
+        En ti encontre mi hogar, en tu voz la paz, en tu amor el infinito, la luz más cálida, no hay rincón de mí que no te ame, no hay instante en que no te elija...Para Dan
+      </p>
+      <div class="letter"></div>
+    </div>
+    <div class="options">
+        <button id="open">Abrir</button>
+        <button id="close">Cerrar</button>
+    </div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
+
+</div><li><a href="menu.html" class="return">⬅ Volver al menú</a>
+</section>
+<style>
+     
+    * {
+        min-width: 0;
+        font: inherit;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    
+    img,
+    video,
+    svg {
+        display: block;
+        height: auto;
+        max-width: 100%;
+    }
+    
+    body {
+        margin: 0;
+        min-height: 100dvh;
+        background-color: #fad7df;
+    }
+    
+    /* Estilos generales */
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .container-letter {
+        position: relative;
+    }
+    
+    .cover {
+        position: absolute;
+        border-left: 200px solid transparent;
+        border-right: 200px solid transparent;
+        border-top: 100px solid #fe3334;
+        border-bottom: 100px solid transparent;
+        transition: transform 0.75s;
+        transform-origin: top;
+    }
+    
+    .paper {
+        position: absolute;
+        padding: 1.5rem;
+        line-height: 2rem;
+        right: 5px;
+        z-index: -1;
+        background: white;
+        width: 390px;
+        height: 180px;
+        transition: all 0.75s;
+    }
+    
+    .letter {
+        border-left: 200px solid #ff989e;
+        border-right: 200px solid #ff989e;
+        border-top: 100px solid transparent;
+        border-bottom: 100px solid #ff858a;
+    }
+    
+    .options {
+        display: flex;
+        gap: 5rem;
+    }
+    
+    .options button {
+        color: #ff3234;
+        font-weight: 600;
+        border-radius: 3px;
+        background: #fad7df;
+        padding: 0.5rem 1rem;
+        border: 1px solid #fe3334;
+        cursor: pointer;
+    }
+    
+    .options button:hover {
+        background: #ff989e;
+        color: white;
+    }
+    
+    /* Clases para la animación */
+    .open-cover {
+        transform: rotateX(180deg);
+    }
+    
+    .open-paper {
+        animation: openPaper 0.5s forwards;
+    }
+    
+    @keyframes openPaper {
+        0% {
+            top: 0;
+        }
+        100% {
+            top: -120px;
+        }
+    }
+    
+    .close-paper {
+        animation: closePaper 0.5s forwards;
+    }
+    
+    @keyframes closePaper {
+        0% {
+            top: -120px;
+        }
+        100% {
+            top: 0;
+        }
+    }
+    
+    /* Corazón */
+    .heart {
+        display: none;
+        position: absolute;
+        top: 25%;
+        left: 46.5%;
+        margin: auto;
+        font-size: 3rem;
+        color: #fe3334;
+        animation: crecer 1s forwards;
+    }
+    
+    @keyframes crecer {
+        0% {
+            scale: 1;
+            opacity: 1;
+        }
+        100% {
+            scale: 3;
+            opacity: 0;
+        }
+    }
+    
+   
+    .hidden {
+        display: none;
+    }
+
+    body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffe6f2;
+            color: #ff1493;
+            text-align: center;
+        }
+        h2 {
+        text-align: center;
+        color: #ff69b4;
+    }
+ 
+    .return-menu {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #ff00aa;
+        font-weight: bold;
+    }
+
+    .info {
+        display: none;
+        margin-top: 10px;
+        padding: 10px;
+        background: #f9f9f9; /* Color de fondo para el texto */
+        border-top: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .return-menu:hover {
+        text-decoration: underline;
+    }
+        .return {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #ff1493;
+        }
+        .return-menu:hover {
+        text-decoration: underline;
+    }

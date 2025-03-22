@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gameworld - Registro e Inicio de Sesión</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff8f9;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            text-align: center;
+            border: 3px solid #ffb6c1;
+        }
+        h1 {
+            font-size: 26px;
+            color: #ff69b4;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 22px;
+            color: #ff4081;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ff69b4;
+            border-radius: 12px;
+            font-size: 16px;
+            outline: none;
+            background: #fff5f7;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+        }
+        button:hover {
+            background-color: #ff4081;
+        }
+        .hidden {
+            display: none;
+        }
+        a {
+            color: #ff69b4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐻 Gameworld 🐻</h1>
+        
+        <div id="registro">
+            <h2>✨ Registro ✨</h2>
+            <input type="text" id="nombre" placeholder="🌸 Nombre" required>
+            <input type="text" id="apellido" placeholder="🌸 Apellido" required>
+            <input type="text" id="usuarioRegistro" placeholder="🌸 Usuario" required>
+            <input type="email" id="correo" placeholder="📧 Correo electrónico" required>
+            <select id="genero" required>
+                <option value="">Seleccione su género</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Otro">Otro</option>
+            </select>
+            <input type="number" id="edad" placeholder="🎂 Edad" required>
+            <input type="password" id="passwordRegistro" placeholder="🔒 Contraseña" required>
+            <button onclick="registrarse()">🎀 Registrarse 🎀</button>
+            <p>¿Ya tienes cuenta? <a href="#" onclick="toggleForm()">Inicia sesión 💖</a></p>
+        </div>
+        
+        <div id="login" class="hidden">
+            <h2>💜 Iniciar Sesión 💜</h2>
+            <input type="text" id="usuarioLogin" placeholder="🌟 Usuario" required>
+            <input type="password" id="passwordLogin" placeholder="🔑 Contraseña" required>
+            <button onclick="login()">💫 Iniciar Sesión 💫</button>
+            <p>¿No tienes cuenta? <a href="#" onclick="toggleForm()">Regístrate ✨</a></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm() {
+            document.getElementById('registro').classList.toggle('hidden');
+            document.getElementById('login').classList.toggle('hidden');
+        }
+
+        function registrarse() {
+            var nombre = document.getElementById("nombre").value;
+            var apellido = document.getElementById("apellido").value;
+            var usuario = document.getElementById("usuarioRegistro").value;
+            var correo = document.getElementById("correo").value;
+            var genero = document.getElementById("genero").value;
+            var edad = document.getElementById("edad").value;
+            var password = document.getElementById("passwordRegistro").value;
+
+            if (nombre.trim() === "" || apellido.trim() === "" || usuario.trim() === "" || correo.trim() === "" || genero.trim() === "" || edad.trim() === "" || password.trim() === "") {
+                alert("Por favor, completa todos los campos.");
+                return;
+            }
+
+            localStorage.setItem("usuario", usuario);
+            localStorage.setItem("password", password);
+            alert("Registro exitoso. Ahora inicia sesión.");
+            toggleForm(); 
+        }
+
+        function login() {
+            var usuario = document.getElementById("usuarioLogin").value;
+            var password = document.getElementById("passwordLogin").value;
+            var storedUser = localStorage.getItem("usuario");
+            var storedPass = localStorage.getItem("password");
+
+            if (usuario.trim() === "" || password.trim() === "") {
+                alert("Por favor, ingresa tu usuario y contraseña.");
+                return;
+            }
+
+            if (usuario === storedUser && password === storedPass) {
+                alert("Inicio de sesión exitoso.");
+                window.location.href = "menu.html";
+            } else {
+                alert("Usuario o contraseña incorrectos.");
+            }
+        }
+    </script>
+</body>
+</html>

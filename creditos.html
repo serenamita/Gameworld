@@ -1,0 +1,123 @@
+<section id="creditos">
+    <h2>creditos</h2>
+            
+            <img src="pankeik.jpg" width="20%" alt="Antiheroe">>
+            <p>No todos los personajes son de mi autoria </p>
+            <p>Michelle y Harry fueron diseñados por @Serenamita </p>
+             </div>
+
+             <img src="strawberry.jpg" width="20%" alt="Antiheroe">>
+             <p>Dan y Mikaela son propiedad y fueron diseñados</p>
+             <p>Por la Artista @Paal</p>
+             </div> 
+</div>
+<li><a href="menu.html" class="return">⬅ Volver al menú</a>
+</section>
+
+<style>
+    body {
+               font-family: 'Comic Sans MS', cursive, sans-serif;
+               background-color: #ffe6f2;
+               color: #ff1493;
+               text-align: center;
+           }
+           h2 {
+           text-align: center;
+           color: #ff69b4;
+       }
+   
+           header {
+               background-color: #ff69b4;
+               padding: 20px;
+               border-radius: 15px;
+           }
+           nav ul {
+               list-style: none;
+               padding: 0;
+           }
+           nav ul li {
+               display: inline;
+               margin: 0 15px;
+           }
+           nav ul li a {
+               color: white;
+               font-weight: bold;
+               text-decoration: none;
+           }
+           .btn {
+               display: inline-block;
+               background-color: #ff1493;
+               color: white;
+               padding: 10px 20px;
+               border-radius: 10px;
+               text-decoration: none;
+           }
+           .btn:hover {
+               background-color: #ff69b4;
+           }
+           .galeria, .creditos-container {
+               display: flex;
+               justify-content: center;
+               gap: 20px;
+               flex-wrap: wrap;
+           }
+           .creditos {
+               background: white;
+               padding: 10px;
+               border-radius: 15px;
+               box-shadow: 0 0 10px #ff69b4;
+               cursor: pointer;
+               position: relative;
+           }
+           .menu img {
+               width: 50px;
+               height: 50px;
+               border-radius: 10px;
+           }
+           .info {
+               display: none;
+               position: absolute;
+               top: 60px;
+               left: 0;
+               background: white;
+               padding: 10px;
+               border-radius: 10px;
+               box-shadow: 0 0 10px #ff69b4;
+               width: 150px;
+           }
+           .btn.hover .info {
+               display: block;
+           
+           }  
+   
+   .return-creditos {
+       display: block;
+       text-align: center;
+       margin-top: 20px;
+       text-decoration: none;
+       color: #ff00aa;
+       font-weight: bold;
+   }
+   
+   .return-creditos:hover {
+       text-decoration: underline;
+   }
+           .return {
+               display: block;
+               margin-top: 20px;
+               text-decoration: none;
+               font-weight: bold;
+               color: #ff1493;
+           }
+           .return-creditos:hover {
+           text-decoration: underline;
+       }
+   </style>
+   
+   <script>
+       function toggleInfo(element) {
+           let info = element.querySelector(".info");
+           info.style.display = info.style.display === "block" ? "none" : "block";
+       }
+   </script>
+

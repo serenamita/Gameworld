@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Personajes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffe6f2;
+            color: #ff1493;
+            text-align: center;
+        }
+        header {
+            background-color: #ff69b4;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #ff1493;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #ff69b4;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .game-title {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .image-container {
+            margin: 20px auto;
+            width: 80%;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .personaje {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #ff69b4;
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+            width: 200px;
+        }
+        .personaje img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+        }
+        .info {
+            display: none;
+            margin-top: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ff69b4;
+            text-align: center;
+        }
+        .galeria, .universos-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .universo {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #ff69b4;
+            cursor: pointer;
+            position: relative;
+        }
+        .universo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+        }
+        .info {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ff69b4;
+            width: 150px;
+        }
+        .btn.hover .info {
+            display: block;
+        }
+        .playlist-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .playlist-container .track {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #ff69b4;
+            width: 300px;
+        }
+        .track img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+        }
+        .return-menu {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GameWorld 💖</h1>
+        <nav>
+            <ul>
+                <li><a href="creditos.html">inicio<a/li>
+                <li><a href="personajes.html">Personajes<a/li>
+                <li><a href="universos.html">Universos Alternos<a/li>
+                <li><a href="playlist.html">Lista de Reproduccion<a/li>
+                <li><a href="Jugar.html">Jugar</a></li>
+    </header>
+
+    <section id="personajes">
+        <h2>Personajes 🏆</h2>
+                <img src="Dan y mich.jpg" width="30%" alt="Lovers">
+                <p>Aqui encontraras los distintos personajes</p>
+                <p>Que forman parte de este bonito universo</p>
+                <p>Diseñapdo para compartir pequeñas historias</p>
+                <p>Sentimientos, emociones, sensaciones</p>
+                <p>Y un poco de esquizofrenia en conjunto ppr un par </p>
+                <p>De amigas un poco locas y con mucho tiempo libre</p>
+                <p>(En realidad son esclavizadas por el sistema escolar)</p>
+            </div>
+
+            <section id="universos">
+                <h2>Universos Alternos 🌎</h2>
+                        <img src="mind.jpg"  width="45%" alt="Mind">
+                        <p>En esta seccion encontraras los distintos</p>
+                        <p>Unversos paralelos que forman parte de nuestra</p>
+                        <p>Historia ya que todavia no tiene exactamente </p>
+                        <p>Una trama fija, solo un puñado de paralelismos</p>
+                        <p>Cada uno, unico a su manera, y quizas mas... interesante </p>
+                    </div>
+
+    <section id="playlist">
+        <h2>Playlist Oficial 🎶</h2>
+        <img src="dead.jpg"   width="40%" alt="¿Can you see?">
+        <p>Aqui encontraras un puado de canciones que representan</p>
+        <p>Un poco de emociones, sensaciones o incluso simples "Vibes"</p>
+        <p>A que dan algunos eventos, personalidades o incluso solo</p>
+        <p>Por la propia personalidad de cada uno de los personajes</p>
+            </div>
+
+            <section id="Jugar">
+                <h2>Mini game 🎶</h2>
+                <img src="valentine.jpg"  width="40%" alt="¿Can you see?">
+                <p>Aqui encontraras un pequeño juego</p>
+                <p>O quizas no, es una sorpresita no para ti</p>
+                <p>Eso es seguro, es mas, personal</p>
+                    </div>
+
+
+                    <section id="menu">
+                        <h2>creditos </h2>
+                        <img src="credits.jpg" width="40%" alt="¿Can you see?">
+                        <p>Aqui encontraras una mini seccion</p>
+                        <p>De creditos a las Artistas que hicieron</p>
+                        <p>Posible esta pagina Web</p>
+                          </div>
+
+            <footer style="margin-top: 50px; color: rgb(243, 92, 193); font-size: 1em; background: white (255, 255, 255, 0.5); padding: 10px; border-radius: 10px;">
+                <p>© 2025 GameWorld. Diseñado con 💖 para los 2 fans.</p>
+            </footer>
+</body>
+</html>
+
+<a href="miperfil.html">
+    <img id="fotoPerfilMenu" src="default-profile.jpg" alt="Perfil" style="width: 40px; height: 40px; border-radius: 50%; position: absolute; top: 10px; right: 10px; cursor: pointer;">
+</a>
+
+<script>
+    // Cargar la foto de perfil guardada en localStorage
+    document.addEventListener("DOMContentLoaded", function () {
+        var fotoGuardada = localStorage.getItem("fotoPerfil");
+        if (fotoGuardada) {
+            document.getElementById("fotoPerfilMenu").src = fotoGuardada;
+        }
+    });
+</script>
+
